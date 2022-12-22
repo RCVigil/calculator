@@ -13,6 +13,10 @@
   flex-direction: row;
 }
 
+.button:hover {
+background-color: rgba(238, 238, 238, 0.911);
+}
+
 .button:active {
   background-color: #ccc;
 }
@@ -30,6 +34,23 @@
   color: #fff;
 }
 
+.button.operation:hover {
+  background-color: #ff934cc2;
+  color: rgb(226, 226, 226);
+  border: 0.05px solid rgba(0, 0, 0, 0.315);
+}
+
 .button.operation:active {
   background-color: #fa8231cc;
+}
+
+.button.cancel {
+  background-color: red;
+  color: #fff;
+}
+
+.button.cancel:hover {
+  background-color: rgba(145, 0, 0, 0.877);
+  color: #fff;
+  border: 0.05px solid rgba(0, 0, 0, 0.315);
 }

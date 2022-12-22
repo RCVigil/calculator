@@ -51,15 +51,16 @@ export default class Calculator extends Component {
     }
   }
 
+
   addDigit (n) {
     if (n === '.' && this.state.displayValue.includes('.')) {
       return
     }
 
     const clearDisplay = this.state.displayValue === '0' || this.state.clearDisplay
-    const currentValue = clearDisplay ? '' : this.state.displayValue
-    const displayValue = currentValue + n
-    this.setState({ displayValue, clearDisplay: false})
+    let currentValue = clearDisplay ? '' : this.state.displayValue
+    let displayValue = currentValue + n;
+    this.setState({ displayValue, clearDisplay: false});
 
     if (n !== '.') {
       const i = this.state.current
@@ -74,7 +75,11 @@ export default class Calculator extends Component {
     return (
       <div className="calculator">
         <Display value={this.state.displayValue}/>
-        <Button label='AC' click={this.clearMemory} triple/>
+        <Button label='AC' click={this.clearMemory} triple cancel/>
+        <Button label='MC' click={this.clearMemory} cancel />
+        <Button label='M+' click={this.clearMemory} />
+        <Button label='M-' click={this.clearMemory} />
+        <Button label='MR' click={this.clearMemory} />
         <Button label='/' click={this.setOperation} operation/>
         <Button label='7' click={this.addDigit}/>
         <Button label='8' click={this.addDigit}/>
